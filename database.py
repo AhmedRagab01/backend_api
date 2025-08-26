@@ -4,7 +4,9 @@ from sqlalchemy.orm import sessionmaker
 from fastapi import FastAPI
 
 ## url --> <db_type>+<driver>://<username>:<password>@<host:port>/<database_name>
-engine = create_engine(url = "postgresql+psycopg2://postgres:ragabola11@localhost:5432/fastapi"
+DB_URL =  'postgresql://neondb_owner:npg_S4DkUpfvlG0X@ep-late-frog-afrlstsl-pooler.c-2.us-west-2.aws.neon.tech/neondb?sslmode=require&channel_binding=require'
+# DB_URL = "postgresql+psycopg2://postgres:ragabola11@localhost:5432/fastapi"
+engine = create_engine(url = DB_URL
                        , pool_size=3
                        , pool_pre_ping=True) ## to check if connection is available before using
 
